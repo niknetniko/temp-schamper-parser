@@ -1,5 +1,6 @@
 package be.almiro.java.urgentparser.domain;
 
+import java.net.URL;
 import java.time.Instant;
 import java.util.Objects;
 
@@ -10,10 +11,12 @@ import java.util.Objects;
  */
 public final class ProgrammeInformation {
 
+    private final URL url;
     private final String name;
     private final Instant validUntil;
 
-    public ProgrammeInformation(String name, Instant validUntil) {
+    public ProgrammeInformation(URL url, String name, Instant validUntil) {
+        this.url = url;
         this.name = name;
         this.validUntil = validUntil;
     }
@@ -24,6 +27,10 @@ public final class ProgrammeInformation {
 
     public Instant getValidUntil() {
         return validUntil;
+    }
+
+    public URL getUrl() {
+        return url;
     }
 
     @Override
